@@ -11,9 +11,9 @@ Open git bash in the directory containing run.py. Then start Python from command
 
 
 ```
-from flask_blog import db
-db.create_all()
-exit()
+>>> from flask_blog import db
+>>> db.create_all()
+>>> exit()
 ```
 Fine? 
 
