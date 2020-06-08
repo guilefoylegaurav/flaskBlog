@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if current_user.is_authenticated %}
+    {% if current_user.id == post.user_id %}
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+         Delete
+        </button>
+    {% endif %}
+{% endif %}
+   <article class="media content-section">
+           <img class="rounded-circle account-img" src="{{ url_for('static', filename = 'profile_pictures/' + post.author.image_file) }}">
+                  <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" >{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.date() }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+    </article>
+   
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Really Delete? You won't be able to reverse the changes!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Take me back</button>
+         <form action="{{ url_for('delete', id=post.id) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
