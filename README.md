@@ -18,7 +18,7 @@ Open git bash in the directory containing run.py. Then start Python from command
 Fine? 
 
 ```
-python run.py
+>>> python run.py
 ```
 Head to [localhost:5000](https://localhost:5000). Enjoy!
 
