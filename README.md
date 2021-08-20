@@ -3,10 +3,10 @@
 Nothing fancy, good old Bootstrap CSS.
 
 ## Backend
-Used Flask, and sqllite db.
+Used Flask, and sqllite db. Flask-SQLAlchemy provides an ORM for the db. 
 
 ## How to Use
-Open git bash in the directory containing run.py. Then start Python from command line. Then: 
+Head to the root directory. Create virtual environment. Start Python from command line. Then: 
 
 
 
@@ -15,11 +15,11 @@ Open git bash in the directory containing run.py. Then start Python from command
 >>> db.create_all()
 >>> exit()
 ```
-Fine? 
+After that, 
 
 ```
 >>> python run.py
 ```
-Head to [localhost:5000](https://localhost:5000). Enjoy!
+Head to [localhost:5000](https://localhost:5000).
 
 
